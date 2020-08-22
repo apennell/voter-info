@@ -1,0 +1,118 @@
+/* 
+ * Color Palette
+ * PURPLE:
+ * 500: #1A0F18;
+ * 400: #502F4C;
+ * 300: #70587C;
+ * 200: #C8B8DB;
+ * 100: #F9F4F5;
+ * red: #FF312E;
+ * BLUE:
+ * 500: #1E5871;
+ * 300: #2E86AB;
+ * 100: #CFDEE7;
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  min-height: 100vh;
+  margin: 0;
+  color: #1a0f18;
+  font-family: "Cardo", serif;
+  background-color: #f9f4f5;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.375rem;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #502f4c;
+}
+
+p {
+  font: 1rem "Cardo", serif;
+}
+
+a,
+a:visited {
+  font: 600 1rem "Josefin Sans", sans-serif;
+  color: #2e86ab;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1e5871;
+  text-decoration: underline;
+}
+
+em {
+  color: #ff312e;
+}
+
+/* Layout */
+main,
+footer,
+nav {
+  margin: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    margin: 2rem;
+  }
+}
+
+.main-wrapper {
+  flex-grow: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em 2em;
+}
+
+@media screen and (min-width: 768px) {
+  .main-wrapper {
+    max-width: 768px;
+    padding: 1.5em 2em;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .main-wrapper {
+    max-width: 1050px;
+    padding: 1.5em 2.5em;
+  }
+}
+
+.section-wrapper {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
