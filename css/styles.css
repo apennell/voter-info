@@ -30,7 +30,7 @@ body {
   min-height: 100vh;
   margin: 0;
   color: #1a0f18;
-  font-family: "Cardo", serif;
+  font-family: 'Cardo', serif;
   background-color: #f9f4f5;
 }
 
@@ -38,7 +38,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 600;
   line-height: 1.2;
 }
@@ -59,12 +59,12 @@ h3 {
 }
 
 p {
-  font: 1rem "Cardo", serif;
+  font: 1rem 'Cardo', serif;
 }
 
 a,
 a:visited {
-  font: 600 1rem "Josefin Sans", sans-serif;
+  font: 600 1rem 'Josefin Sans', sans-serif;
   color: #2e86ab;
   text-decoration: none;
 }
@@ -112,7 +112,11 @@ nav {
   }
 }
 
+.navbar a {
+  padding: 1rem;
+}
+
 .section-wrapper {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 7rem;
+  margin-bottom: 7rem;
 }
