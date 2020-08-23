@@ -7,21 +7,18 @@
 const navList = document.querySelector('#navbar-list');
 const sections = document.querySelectorAll('.section-wrapper');
 
-// TODO: refactor element creation and use li; change to use scroll to
 const navItems = document.createDocumentFragment();
-sections.forEach(function (section) {
-  const link = document.createElement('a');
-  link.textContent = section.getAttribute('data-nav');
-  link.href = `#${section.id}`;
-  navItems.appendChild(link);
+sections.forEach(({id, dataset: {nav}}) => {
+  const li = document.createElement('li');
+  const link = `<a href="#${id}">${nav}</a>`;
+  li.innerHTML = link;
+  navItems.appendChild(li);
 });
 navList.appendChild(navItems);
 
 // Add class 'active' to section when near top of viewport
 
 // Scroll to anchor ID using scrollTO event
-
-// Build menu
 
 // Scroll to section on link click
 
