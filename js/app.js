@@ -1,4 +1,7 @@
-// Exercise programmatically builds navigation and highlights section in viewport upon scrolling.
+/**
+ * Exercise programmatically builds navigation, scrolls to active section on nav click,
+ * and highlights section in viewport upon scrolling.
+ */
 
 // Create the navigation menu
 const navList = document.querySelector('#navbar-list');
@@ -8,21 +11,32 @@ const navItems = document.createDocumentFragment();
 sections.forEach(({id, dataset: {nav}}) => {
   const li = document.createElement('li');
   li.id = `link-${id}`;
-  const link = `<a href="#${id}">${nav}</a>`;
+  const link = `<a href="#${id}" class="nav-link">${nav}</a>`;
   li.innerHTML = link;
   navItems.appendChild(li);
 });
 navList.appendChild(navItems);
 
-// Toggle which section has class 'active-section' when new class nears top of viewport on scroll
-window.addEventListener('scroll', () => {
+// Scroll to section on nav click
+const scrollToSection = (e) => {
+  e.preventDefault();
+  document.querySelector(e.target.getAttribute('href')).scrollIntoView({
+    behavior: 'smooth',
+  });
+};
+
+document.querySelectorAll('.nav-link').forEach((link) => {
+  link.addEventListener('click', scrollToSection);
+});
+
+// Toggle which section has class 'active-section' when new class nears top of viewport
+const setActiveSection = () => {
   // Reverse section order to find the lowest section near the top of window first
   const reverseSections = [...sections].reverse();
 
   for (let i = 0; i < reverseSections.length; i++) {
     const section = reverseSections[i];
-    const sectionPosition = section.getBoundingClientRect();
-    const inView = sectionPosition.top < 250;
+    const inView = section.getBoundingClientRect().top < 250;
     if (inView) {
       // Only update active classes if changing which section is active
       if (!section.classList.contains('active-section')) {
@@ -41,6 +55,8 @@ window.addEventListener('scroll', () => {
       break;
     }
   }
-});
+};
+
+window.addEventListener('scroll', setActiveSection);
 
 // Scroll to top

@@ -6,4 +6,4 @@ This project requires you to build a multi-section landing page, with a dynamica
 
 [Project Rubric](https://review.udacity.com/#!/rubrics/2658/view)
 
-Scroll behavior is achieved through use of native HTML + CSS functionality to preserve accessibility while improving UX.
+Would be better to implement scroll behavior through use of native HTML + CSS functionality to preserve accessibility while improving UX, but achieved through JS instead to satisfy project requirements.
