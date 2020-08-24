@@ -2,6 +2,8 @@
 
 ## Project 2 for Udacity Frontend Nanodegree course
 
+[View Demo](https://apennell.github.io/voter-info/)
+
 This project is a demonstration of accessing and manipulating the DOM using JavaScript.
 
 Core requirements:
@@ -27,3 +29,7 @@ html {
 ```
 
 However, it was clear that the project requirements wanted this done using JavaScript selectors and scrolling, so I implemented it that way rather than the best way.
+
+### With more time...
+
+I would like to build out the content of the site. The idea is that it's a basic voter information site, providing straightforward information about how to vote in your local US elections. I would like to add real content and customize it by location.
