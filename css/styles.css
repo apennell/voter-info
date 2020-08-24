@@ -24,10 +24,6 @@ html {
 }
 
 body {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-between;
-  min-height: 100vh;
   margin: 0;
   color: #1a0f18;
   font-family: 'Cardo', serif;
@@ -87,15 +83,37 @@ nav {
 
 @media screen and (min-width: 768px) {
   main,
-  footer {
+  footer,
+  nav {
     padding: 2em;
   }
 }
 
-.main-wrapper {
-  flex-grow: 1;
+.grid-wrapper {
+  min-height: 100vh;
   width: 100%;
-  margin: 86px auto 0;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-wrapper {
+    display: grid;
+    grid-template:
+      'main sidenav' auto
+      'footer footer' 100px
+      / 1fr 15em;
+    grid-template-columns: 1fr 15em;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .grid-wrapper {
+    grid-template-columns: 1fr 19em;
+  }
+}
+
+.main-wrapper {
+  grid-area: main;
+  margin: 0 auto;
   padding: 1em 2em;
 }
 
@@ -113,19 +131,31 @@ nav {
   }
 }
 
-.navbar {
-  position: fixed;
-  width: 100%;
+@media screen and (min-width: 768px) {
+  .navbar {
+    grid-area: sidenav;
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+  }
 }
 
 .navbar ul {
   margin: 0;
   padding: 0;
+  border: 3px solid #2e86ab;
 }
 
 .navbar li {
-  padding: 1em;
+  width: 100%;
+  padding: 0.5em 1em;
   display: inline-block;
+}
+
+@media screen and (min-width: 992px) {
+  .navbar li {
+    padding: 1em;
+  }
 }
 
 .navbar li.active-nav {
@@ -134,6 +164,11 @@ nav {
 
 .navbar li.active-nav a {
   color: #f9f4f5;
+}
+
+footer {
+  grid-area: footer;
+  align-self: center;
 }
 
 .section-wrapper {
