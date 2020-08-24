@@ -70,6 +70,19 @@ a:hover {
   text-decoration: underline;
 }
 
+button {
+  font: 600 1rem 'Josefin Sans', sans-serif;
+  color: #2e86ab;
+  background: none;
+  border: 2px solid #2e86ab;
+  padding: 0.75em;
+}
+
+button:hover {
+  color: #1e5871;
+  border-color: #1e5871;
+}
+
 em {
   color: #ff312e;
 }
@@ -180,4 +193,11 @@ footer {
 .section-wrapper.active-section {
   border-left: 2em solid #2e86ab;
   padding-left: 1em;
+}
+
+#top-button {
+  position: fixed;
+  bottom: 1em;
+  right: 2em;
+  display: none;
 }
